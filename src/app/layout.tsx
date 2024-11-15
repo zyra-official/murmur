@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { MusicPlayer } from "@/components/Player";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,9 +38,10 @@ export default function RootLayout({
           }}
         >
           <AppSidebar />
-          <main>
+          <main className="flex flex-col flex-grow">
             <SidebarTrigger />
-            {children}
+            <main className="flex-grow">{children}</main>
+            <MusicPlayer />
           </main>
         </SidebarProvider>
       </body>
