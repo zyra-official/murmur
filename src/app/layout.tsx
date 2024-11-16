@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
+import { AppSidebar } from "@/components/app-sidebar2";
 import { MusicPlayer } from "@/components/Player";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,12 +36,19 @@ export default function RootLayout({
           style={{
             "--sidebar-width": "16rem",
             "--sidebar-width-mobile": "16rem",
+            "--sidebar-width-icon": "5rem",
           }}
         >
-          <AppSidebar />
-          <main className="flex flex-col flex-grow">
-            <SidebarTrigger />
-            <main className="flex-grow">{children}</main>
+          <AppSidebar className="mx-auto" />
+
+          <main className="flex flex-col flex-grow px-6">
+            <nav>
+              <div className="flex">
+                <div>MurMur</div>
+                <SidebarTrigger />
+              </div>
+            </nav>
+            <ScrollArea className="flex-grow">{children}</ScrollArea>
             <MusicPlayer />
           </main>
         </SidebarProvider>

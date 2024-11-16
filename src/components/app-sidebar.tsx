@@ -25,6 +25,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ScrollArea } from "./ui/scroll-area";
 const mainRoutes = [
   { label: "Home", icon: Home, href: "/" },
   { label: "Discover", icon: Compass, href: "/discover" },
@@ -60,109 +61,111 @@ export function AppSidebar() {
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-3">
-              {mainRoutes.map((route) => (
-                <SidebarMenuItem key={route.href}>
-                  <SidebarMenuButton
-                    className={cn(
-                      "w-full justify-start h-12",
-                      pathname === route.href
-                        ? "bg-primary/10 text-primary hover:bg-primary/15"
-                        : "hover:bg-primary/5",
-                    )}
-                    asChild
-                  >
-                    <Link href={route.href}>
-                      <span
-                        className={cn(
-                          "p-2 rounded-xl mr-3",
-                          pathname === route.href
-                            ? "bg-primary/15 text-primary"
-                            : "bg-muted/80",
-                        )}
-                      >
-                        <route.icon className="h-5 w-5" />
-                      </span>
-                      <span>{route.label}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        <ScrollArea>
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <SidebarMenu className="space-y-3">
+                {mainRoutes.map((route) => (
+                  <SidebarMenuItem key={route.href}>
+                    <SidebarMenuButton
+                      className={cn(
+                        "w-full justify-start h-12",
+                        pathname === route.href
+                          ? "bg-primary/10 text-primary hover:bg-primary/15"
+                          : "hover:bg-primary/5",
+                      )}
+                      asChild
+                    >
+                      <Link href={route.href}>
+                        <span
+                          className={cn(
+                            "p-2 rounded-xl mr-3",
+                            pathname === route.href
+                              ? "bg-primary/15 text-primary"
+                              : "bg-muted/80",
+                          )}
+                        >
+                          <route.icon className="h-5 w-5" />
+                        </span>
+                        <span>{route.label}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
 
-        <SidebarGroup>
-          <SidebarGroupLabel>Library</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-3">
-              {libraryRoutes.map((route) => (
-                <SidebarMenuItem key={route.href}>
-                  <SidebarMenuButton
-                    className={cn(
-                      "w-full justify-start h-12",
-                      pathname === route.href
-                        ? "bg-primary/10 text-primary hover:bg-primary/15"
-                        : "hover:bg-primary/5",
-                    )}
-                    asChild
-                  >
-                    <Link href={route.href}>
-                      <span
-                        className={cn(
-                          "p-2 rounded-xl mr-3",
-                          pathname === route.href
-                            ? "bg-primary/15 text-primary"
-                            : "bg-muted/80",
-                        )}
-                      >
-                        <route.icon className="h-5 w-5" />
-                      </span>
-                      <span>{route.label}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+          <SidebarGroup>
+            <SidebarGroupLabel>Library</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu className="space-y-3">
+                {libraryRoutes.map((route) => (
+                  <SidebarMenuItem key={route.href}>
+                    <SidebarMenuButton
+                      className={cn(
+                        "w-full justify-start h-12",
+                        pathname === route.href
+                          ? "bg-primary/10 text-primary hover:bg-primary/15"
+                          : "hover:bg-primary/5",
+                      )}
+                      asChild
+                    >
+                      <Link href={route.href}>
+                        <span
+                          className={cn(
+                            "p-2 rounded-xl mr-3",
+                            pathname === route.href
+                              ? "bg-primary/15 text-primary"
+                              : "bg-muted/80",
+                          )}
+                        >
+                          <route.icon className="h-5 w-5" />
+                        </span>
+                        <span>{route.label}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
 
-        <SidebarGroup>
-          <SidebarGroupLabel>User</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-3">
-              {userRoutes.map((route) => (
-                <SidebarMenuItem key={route.href}>
-                  <SidebarMenuButton
-                    className={cn(
-                      "w-full justify-start h-12",
-                      pathname === route.href
-                        ? "bg-primary/10 text-primary hover:bg-primary/15"
-                        : "hover:bg-primary/5",
-                    )}
-                    asChild
-                  >
-                    <Link href={route.href}>
-                      <span
-                        className={cn(
-                          "p-2 rounded-xl mr-3",
-                          pathname === route.href
-                            ? "bg-primary/15 text-primary"
-                            : "bg-muted/80",
-                        )}
-                      >
-                        <route.icon className="h-5 w-5" />
-                      </span>
-                      <span>{route.label}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+          <SidebarGroup>
+            <SidebarGroupLabel>User</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu className="space-y-3">
+                {userRoutes.map((route) => (
+                  <SidebarMenuItem key={route.href}>
+                    <SidebarMenuButton
+                      className={cn(
+                        "w-full justify-start h-12",
+                        pathname === route.href
+                          ? "bg-primary/10 text-primary hover:bg-primary/15"
+                          : "hover:bg-primary/5",
+                      )}
+                      asChild
+                    >
+                      <Link href={route.href}>
+                        <span
+                          className={cn(
+                            "p-2 rounded-xl mr-3",
+                            pathname === route.href
+                              ? "bg-primary/15 text-primary"
+                              : "bg-muted/80",
+                          )}
+                        >
+                          <route.icon className="h-5 w-5" />
+                        </span>
+                        <span>{route.label}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </ScrollArea>
       </SidebarContent>
     </Sidebar>
   );
