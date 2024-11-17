@@ -55,7 +55,7 @@ export function FeaturedPlaylists() {
     console.log(section.clientWidth);
   });
   return (
-    <section ref={featuredPlaylistRef} className="space-y-6">
+    <section ref={featuredPlaylistRef} className="space-y-6 my-4">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-semibold tracking-tight">
           Featured Playlists
@@ -65,10 +65,10 @@ export function FeaturedPlaylists() {
         </Button>
       </div>
       {/* <ScrollArea className="-mx-4 px-4"> */}
-      <ScrollArea className="">
-        <div className="grid grid-cols-4 space-x-4 pb-4">
+      <ScrollArea className="grid grid-cols-1 ">
+        <div className="flex space-x-4 pb-4  overflow-auto">
           {featuredPlaylists.map((playlist) => (
-            <Card key={playlist.title} className=" ">
+            <Card key={playlist.title} className=" w-[320px]">
               <CardHeader className="relative p-0">
                 <div
                   className="aspect-[4/3] rounded-t-lg bg-cover bg-center"

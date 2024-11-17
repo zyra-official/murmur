@@ -14,14 +14,20 @@ import {
   Heart,
   Maximize2,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export function MusicPlayer() {
+export function MusicPlayer({ className }: { className?: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState([70]);
   const [progress, setProgress] = useState([0]);
 
   return (
-    <div className=" h-24 w-full bg-background/60 backdrop-blur-xl border-t border-border">
+    <div
+      className={cn(
+        " h-24 w-full bg-background/60 backdrop-blur-xl border-t border-border",
+        className,
+      )}
+    >
       {/* <div className="fixed  right-0 h-24 bg-background/60 backdrop-blur-xl border-t border-border"> */}
       <div className="container h-full mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-4 w-1/4">
