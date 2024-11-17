@@ -20,7 +20,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "murmur",
-  description: "",
+  description: ""
 };
 
 export default function RootLayout({
@@ -62,6 +62,7 @@ export default function RootLayout({
           </main>
         </SidebarProvider>
       </body>
+      <body>{children}</body>
     </html>
   );
 }
