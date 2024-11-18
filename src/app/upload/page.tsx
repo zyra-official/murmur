@@ -1,7 +1,7 @@
-import { AudioUploadFormComponent } from "@/components/audio-upload-form";
+import AudioUpload from "@/components/audio-upload-form";
 
 const Page = () => {
-  return <AudioUploadFormComponent />;
+  return <AudioUpload />;
 };
 
 export default Page;

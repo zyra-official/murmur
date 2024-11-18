@@ -1,77 +1,42 @@
-'use client'
 
-import { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { AlertCircle, CheckCircle2 } from 'lucide-react'
+"use client";
+import { useRef } from "react";
 
-export function AudioUploadFormComponent() {
-  const [file, setFile] = useState<File | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!file) {
-      setMessage({ type: 'error', text: 'Please select a file' })
-      return
+const AudioUpload = () => {
+  const audioRef = useRef<HTMLInputElement>(null);
+  const handleAudioUpload = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const audioFiles = audio?.files;
+    if (!audioFiles) return;
+    const audioFile = audioFiles[0];
+    if (!audioFile) return;
+    const { name, size, type } = audioFile;
+    const res = await fetch("/api/put-to-s3", {
+      method: "POST",
+      headers: {
+        ContentType: "application/json",
+      },
+      body: JSON.stringify({ name, size, type }),
+    });
+    const { preSignedUrl } = await res.json();
+    console.log({ preSignedUrl });
+    const uploadResponse = await fetch(preSignedUrl, {
+      method: "PUT",
+      body: audioFile,
+    });
+    if (!uploadResponse.ok) {
+      throw new Error("Failed to upload the audio file");
     }
 
-    setIsLoading(true)
-    setMessage(null)
-
-    const formData = new FormData()
-    formData.append('audio', file)
-
-    try {
-      const response = await fetch('/api/audio-thing', {
-        method: 'POST',
-        body: formData,
-      })
-
-      if (!response.ok) {
-        throw new Error('Upload failed')
-      }
-
-      setMessage({ type: 'success', text: 'File uploaded successfully' })
-    } catch (error) {
-      setMessage({ type: 'error', text: 'An error occurred while uploading the file' })
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
+    const responseBody = await uploadResponse.json();
+    console.log("Upload response:", responseBody);
+  };
   return (
-    <Card className="w-full max-w-md mx-auto">
-      <CardHeader>
-        <CardTitle>Upload Audio File</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <Input
-              type="file"
-              accept="audio/wav"
-              onChange={(e) => setFile(e.target.files?.[0] || null)}
-              disabled={isLoading}
-            />
-          </div>
-          <Button type="submit" disabled={isLoading} className="w-full">
-            {isLoading ? 'Uploading...' : 'Upload'}
-          </Button>
-          {message && (
-            <div className={`flex items-center ${message.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-              {message.type === 'success' ? (
-                <CheckCircle2 className="mr-2" size={18} />
-              ) : (
-                <AlertCircle className="mr-2" size={18} />
-              )}
-              {message.text}
-            </div>
-          )}
-        </form>
-      </CardContent>
-    </Card>
-  )
-}
+    <div>
+      <input ref={audioRef} type="file" accept="audio/*" />
+      <button onClick={handleAudioUpload}>Upload</button>
+    </div>
+  );
+};
+export default AudioUpload;
