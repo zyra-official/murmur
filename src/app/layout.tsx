@@ -20,7 +20,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "murmur",
-  description: ""
+  description: "",
 };
 
 export default function RootLayout({
@@ -42,7 +42,7 @@ export default function RootLayout({
         >
           <AppSidebar />
 
-          <main className="flex flex-col flex-grow px-6  relative h-screen">
+          <main className="flex flex-col flex-grow px-2  relative h-screen">
             <ScrollArea className="grid grid-cols-1 grid-rows-1  mb-24  overflow-y-scroll [&::-webkit-scrollbar]:w-2">
               <nav className="flex justify-between">
                 <div className="flex">
@@ -62,7 +62,6 @@ export default function RootLayout({
           </main>
         </SidebarProvider>
       </body>
-      <body>{children}</body>
     </html>
   );
 }
