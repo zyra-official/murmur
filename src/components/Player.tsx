@@ -86,8 +86,8 @@ export function MusicPlayer({ className }: { className?: string }) {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 w-1/4 justify-end">
-          <div className="flex items-center space-x-2">
+        <div className="hidden sm:flex items-center space-x-4 w-1/4 justify-end">
+          <div className=" flex items-center space-x-2">
             <Volume2 className="h-4 w-4" />
             <Slider
               value={volume}

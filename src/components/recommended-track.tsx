@@ -42,7 +42,7 @@ const recommendedTracks = [
 
 export function RecommendedTracks() {
   return (
-    <section className=" my-6">
+    <section className="my-6 ">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-semibold tracking-tight">
           Recommended for You
@@ -51,13 +51,13 @@ export function RecommendedTracks() {
           View all
         </Button>
       </div>
-      <ScrollArea className="grid grid-cols-1">
-        <div className="flex space-x-4 pb-4 overflow-auto">
+      <ScrollArea className="grid grid-cols-1 ">
+        <div className="flex space-x-4 pb-4 overflow-auto ">
           {recommendedTracks.map((track) => (
-            <Card key={track.title} className="w-[250px] shrink-0">
+            <Card key={track.title} className="w-[350px] shrink-0">
               <CardHeader className="relative p-0">
                 <div
-                  className="aspect-square rounded-t-lg bg-cover bg-center"
+                  className="aspect-square rounded-t-lg bg-cover bg-center h-[150px] "
                   style={{ backgroundImage: `url(${track.image})` }}
                 >
                   <div className="absolute inset-0 bg-black/20 rounded-t-lg" />

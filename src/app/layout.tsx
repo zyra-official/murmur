@@ -6,6 +6,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { MusicPlayer } from "@/components/Player";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/nav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen scrollbar-hide`}
       >
         <SidebarProvider
           style={{
@@ -43,21 +44,12 @@ export default function RootLayout({
           <AppSidebar />
 
           <main className="flex flex-col flex-grow px-2  relative h-screen">
-            <ScrollArea className="grid grid-cols-1 grid-rows-1  mb-24  overflow-y-scroll [&::-webkit-scrollbar]:w-2">
-              <nav className="flex justify-between">
-                <div className="flex">
-                  <div>MurMur</div>
-                  <SidebarTrigger />
-                </div>
-                <div>
-                  <Button>Sign up</Button>
-                  <Button>Sign in</Button>
-                </div>
-              </nav>
+            <section className="grid grid-cols-1 grid-rows-[50px,1fr]  mb-24  overflow-y-auto no-scrollbar">
+              <Navbar />
               <ScrollArea className="flex-grow overflow-auto">
                 {children}
               </ScrollArea>
-            </ScrollArea>
+            </section>
             <MusicPlayer className="absolute bottom-0 right-0" />
           </main>
         </SidebarProvider>
