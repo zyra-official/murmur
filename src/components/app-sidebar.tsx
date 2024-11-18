@@ -8,7 +8,6 @@ import {
   Compass,
   ListMusic,
   Clock,
-  Plus,
 } from "lucide-react";
 
 import {
