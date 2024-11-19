@@ -11,7 +11,9 @@ const recommendedTracks = [
     artist: "James Jani",
     duration: "20 min 15 sec",
     category: "money",
-    image: "/untoldtruthaboutmoney.jpg",
+    src: "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/UntoldTruthAboutMoney/output.m3u8",
+    image:
+      "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/UntoldTruthAboutMoney/untoldtruthaboutmoney.jpg",
   },
   {
     title: "How to Get Rich And Build Wealth.",
@@ -27,7 +29,9 @@ const recommendedTracks = [
     artist: "Dan Koe",
     duration: "34 min 01 sec",
     category: "business",
-    image: "/onepersonbusiness.jpg",
+    src: "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/onepersonbusiness/output.m3u8",
+    image:
+      "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/onepersonbusiness/onepersonbusiness.jpg",
   },
   {
     title: "How to Teach Yourself Anything, Learn More in Less Time.",

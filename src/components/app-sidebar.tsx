@@ -3,11 +3,11 @@ import {
   Home,
   Headphones,
   Heart,
-  Trophy,
   BarChart,
   Compass,
   ListMusic,
   Clock,
+  Notebook,
 } from "lucide-react";
 
 import {
@@ -35,9 +35,8 @@ const libraryRoutes = [
   { label: "Favorites", icon: Heart, href: "/favorites" },
   { label: "Recent", icon: Clock, href: "/recent" },
 ];
-
 const userRoutes = [
-  { label: "Achievements", icon: Trophy, href: "/achievements" },
+  { label: "Notes", icon: Notebook, href: "/achievements" },
   { label: "Stats", icon: BarChart, href: "/stats" },
 ];
 
@@ -65,7 +64,7 @@ export function AppSidebar() {
         <ScrollArea>
           <SidebarGroup>
             <SidebarGroupContent>
-              <SidebarMenu className="space-y-3">
+              <SidebarMenu className="space-y-1">
                 {mainRoutes.map((route) => (
                   <SidebarMenuItem key={route.href}>
                     <SidebarMenuButton
