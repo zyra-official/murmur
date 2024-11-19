@@ -7,40 +7,36 @@ import { PlayCircle, Clock } from "lucide-react";
 
 const recommendedTracks = [
   {
-    title: "Focused Flow",
-    artist: "Ambient Minds",
-    duration: "15 min",
-    category: "Focus",
-    image:
-      "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=1000",
+    title: "The Untold Truth About Money: How to Build Wealth From Nothing.",
+    artist: "James Jani",
+    duration: "20 min 15 sec",
+    category: "money",
+    image: "/untoldtruthaboutmoney.jpg",
   },
   {
-    title: "Ocean Waves",
-    artist: "Nature Sounds",
-    duration: "20 min",
-    category: "Relaxation",
-    image:
-      "https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=1000",
+    title: "How to Get Rich And Build Wealth.",
+    artist: "Navel ",
+    duration: "30 min 39 sec",
+    category: "money",
+    image: "/howtogetrich.jpg",
   },
   {
-    title: "Productivity Boost",
-    artist: "Brain Waves",
-    duration: "25 min",
-    category: "Focus",
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1000",
+    title: "Turn Yourself Into Business: The One Person Business",
+    artist: "Dan Koe",
+    duration: "34 min 01 sec",
+    category: "business",
+    image: "/onepersonbusiness.jpg",
   },
   {
-    title: "Mindful Moments",
-    artist: "Zen Masters",
-    duration: "10 min",
-    category: "Relaxation",
-    image:
-      "https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=1000",
+    title: "How to Teach Yourself Anything, Learn More in Less Time.",
+    artist: "Peter Hollins",
+    duration: "33 min 01 sec",
+    category: "learning",
+    image: "/thescienceofselflearning.jpg",
   },
 ];
 
-export function RecommendedTracks() {
+export function RecommendedContent() {
   return (
     <section className="my-6 ">
       <div className="flex items-center justify-between">

@@ -14,12 +14,11 @@ import { useLayoutEffect, useRef } from "react";
 
 const featuredPlaylists = [
   {
-    title: "Morning Mindfulness",
-    description: "Start your day with clarity and purpose",
+    title: "Wealth Awakening",
+    description: "Start your day with wealth-building insights",
     duration: "30 min",
-    image:
-      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000",
-    category: "Relaxation",
+    image: "/wealthplaylist.jpg",
+    category: "money",
   },
   {
     title: "Deep Focus Zone",

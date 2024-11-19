@@ -28,7 +28,6 @@ import { ScrollArea } from "./ui/scroll-area";
 const mainRoutes = [
   { label: "Home", icon: Home, href: "/" },
   { label: "Discover", icon: Compass, href: "/discover" },
-  { label: "Library", icon: Headphones, href: "/library" },
 ];
 
 const libraryRoutes = [
@@ -45,7 +44,10 @@ const userRoutes = [
 export function AppSidebar() {
   const pathname = usePathname();
   return (
-    <Sidebar collapsible="icon" className="bg-background/60 backdrop-blur-xl">
+    <Sidebar
+      collapsible="offcanvas"
+      className="bg-background/60 backdrop-blur-xl h-screen"
+    >
       <SidebarHeader>
         <div className="p-6">
           <Link

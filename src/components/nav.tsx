@@ -1,12 +1,13 @@
 import { Search } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { SidebarTrigger } from "./ui/sidebar";
 
 export const Navbar = () => {
   return (
     <nav className="flex justify-between h-full items-center">
       <div className="flex items-center gap-2 flex-grow">
-        <div>MurMur</div>
+        <SidebarTrigger />
         {/* //search  */}
 
         <div className="flex-1 max-w-xl px-4">

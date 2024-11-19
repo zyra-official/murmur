@@ -1,7 +1,7 @@
 import CategoryGrid from "@/components/categoryGrid";
 import FeaturedContent from "@/components/featured-content";
 import { FeaturedPlaylists } from "@/components/featured-playlists";
-import { RecommendedTracks } from "@/components/recommended-track";
+import { RecommendedContent } from "@/components/recommended-track";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <FeaturedContent />
       <FeaturedPlaylists />
       <CategoryGrid />
-      <RecommendedTracks />
+      <RecommendedContent />
     </section>
   );
 }
