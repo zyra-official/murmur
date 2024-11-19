@@ -18,7 +18,9 @@ const recommendedTracks = [
     artist: "Navel ",
     duration: "30 min 39 sec",
     category: "money",
-    image: "/howtogetrich.jpg",
+    src: "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/navelhowtogetrich/output.m3u8",
+    image:
+      "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/navelhowtogetrich/howtogetrich.jpg",
   },
   {
     title: "Turn Yourself Into Business: The One Person Business",
@@ -32,7 +34,9 @@ const recommendedTracks = [
     artist: "Peter Hollins",
     duration: "33 min 01 sec",
     category: "learning",
-    image: "/thescienceofselflearning.jpg",
+    src: "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/thescienceofselflearning/output.m3u8",
+    image:
+      "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/thescienceofselflearning/thescienceofselflearning.jpg",
   },
 ];
 

@@ -12,7 +12,7 @@ export default function Play() {
       const hls = new Hls();
       // hls.loadSource(audioSrcUrl);
       hls.loadSource(
-        "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/navelhowtogetrich/output.m3u8",
+        "https://s3.ap-south-1.amazonaws.com/murmur.m3u8/thescienceofselflearning/output.m3u8",
       );
       if (!audioRef.current) return;
       hls.attachMedia(audioRef.current);
@@ -22,7 +22,6 @@ export default function Play() {
       });
     }
   });
-
   return (
     <section className="overflow-hidden">
       <audio ref={audioRef} controls></audio>

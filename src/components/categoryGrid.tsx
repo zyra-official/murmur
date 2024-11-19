@@ -12,13 +12,13 @@ const categories = [
 
 export default function CategoryGrid() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 ">
       {categories.map((category) => {
         const Icon = category.icon;
         return (
           <Card
             key={category.name}
-            className="group hover:scale-105 transition-all duration-200 bg-white/10 border-white/20 backdrop-blur-lg cursor-pointer"
+            className="group hover:scale-105 transition-all duration-200 border-gray-100  backdrop-blur-lg cursor-pointer shadow-md"
           >
             <CardContent className="p-6 flex flex-col items-center justify-center space-y-2">
               <div
@@ -27,7 +27,7 @@ export default function CategoryGrid() {
               >
                 <Icon className="w-6 h-6" style={{ color: category.color }} />
               </div>
-              <span className="text-white font-medium">{category.name}</span>
+              <span className="font-medium">{category.name}</span>
             </CardContent>
           </Card>
         );
