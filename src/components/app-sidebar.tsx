@@ -32,7 +32,7 @@ const mainRoutes = [
 
 const libraryRoutes = [
   { label: "Playlists", icon: ListMusic, href: "/playlists" },
-  { label: "Favorites", icon: Heart, href: "/favorites" },
+  { label: "Favourites", icon: Heart, href: "/favourites" },
   { label: "Recent", icon: Clock, href: "/recent" },
 ];
 const userRoutes = [
