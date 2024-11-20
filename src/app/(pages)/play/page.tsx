@@ -1,5 +1,7 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import Hls from "hls.js";
+import { PlayIcon } from "lucide-react";
 // import { useLayoutEffect, useRef, useState } from "react";
 import { useLayoutEffect, useRef } from "react";
 export default function Play() {
@@ -24,7 +26,10 @@ export default function Play() {
   });
   return (
     <section className="overflow-hidden">
-      <audio ref={audioRef} controls></audio>
+      <audio ref={audioRef}></audio>
+      <Button onClick={() => audioRef?.current?.play()}>
+        <PlayIcon />
+      </Button>
     </section>
   );
 }

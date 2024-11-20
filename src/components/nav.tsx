@@ -5,12 +5,10 @@ import { SidebarTrigger } from "./ui/sidebar";
 
 export const Navbar = () => {
   return (
-    <nav className="flex justify-between h-full items-center">
+    <nav className="flex gap-2 justify-between h-full items-center">
       <div className="flex items-center gap-2 flex-grow">
         <SidebarTrigger />
-        {/* //search  */}
-
-        <div className="flex-1 max-w-xl px-4">
+        <div className="flex-1 max-w-xl sm:px-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <Input
@@ -22,7 +20,9 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="flex gap-1 sm:gap-2 md:gap-4">
-        <Button className="p-4 font-bold rounded-full">Sign up</Button>
+        <Button className="hidden sm:flex p-4 font-bold rounded-full">
+          Sign up
+        </Button>
         <Button className="p-4 font-bold rounded-full">Sign in</Button>
       </div>
     </nav>

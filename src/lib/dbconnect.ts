@@ -18,6 +18,7 @@ if (!cached) {
 
 const dbConnect = async () => {
   if (cached.conn) {
+    console.log("dbconnect success cached");
     return cached.conn;
   }
   if (!cached.promise) {
@@ -27,11 +28,13 @@ const dbConnect = async () => {
     try {
       cached.promise = connect(uri, opts);
       cached.conn = await cached.promise;
+      console.log("dbconnect success");
     } catch (e) {
       cached.promise = null;
       throw e;
     }
   }
+
   return cached.conn;
 };
 

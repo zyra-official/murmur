@@ -3,9 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
-import { MusicPlayer } from "@/components/Player";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Navbar } from "@/components/nav";
+import { MusicPlayer } from "@/components/musicplayer";
+// import { MusicPlayer } from "@/components/Player";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
